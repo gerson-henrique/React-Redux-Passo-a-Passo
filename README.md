@@ -50,15 +50,9 @@ Vamos começar com o mais obvil, precisamos de uma aplicação <strong> React </
   #### Configuração Padrão das Pastas 📁
   toda a configuração do redux pode ser feita praticamente em um arquivo, mas como nós temos amor a nossas aplicações, vamos organizar tudo de um jeito lógico e simples. 
   Dentro da nossa src vamos criar uma pasta chamada **Store**, essa pagina vai ter três filhos. um arquivo chamado index.js e duas pastas, uma com o nome de **Actions** e **Reducer**, ambas tambem com um arquivo indexis.js em seu interior.
-  vizualize: 
-  
-     store-
-    	  index.js
-    	  actions-
-    		   index.js
-	      reducer.js
-    			index.js 
+ 
 
+     
 Essa é a nossa estrutura minima para trabalhar com a configuração, agora vamos abstrair um pouco nosso projeto. 
 
   #### Parte um :  Abstração 💭
@@ -103,6 +97,7 @@ Vamos começar na nossa querida página
 dentro do Redux, a função do **reducer** é de sobreescrever o valor dos states, com a lógica que varia dependendo de um tipo (Type) que for passado para ele pelas actions.
 
 Aqui, a primeira coisa que  precisamos definir são os states da aplicação, como foi combinado acima iremos usar nome e idade
+	
 ```jsx
     const ESTADO_INICIAL = {
     nome: ""
