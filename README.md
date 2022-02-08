@@ -181,7 +181,7 @@ e por fim precisamos somente concatenar os reducers criados.nesse exemplo, criam
 
   
 
-const rootReducer = combineReducer ({myReducer})
+const rootReducer = combineReducers ({myReducer})
 
   
 
