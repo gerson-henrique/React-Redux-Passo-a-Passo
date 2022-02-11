@@ -111,9 +111,9 @@ Parando pra analisar, as únicas informações que precisaremos para a aplicaç�
 
 {
 
-nome: ''
+nome: '',
 
-idade: 0
+idade: 0,
 
 }
 
@@ -147,9 +147,9 @@ Aqui, a primeira coisa que precisamos definir são os states da aplicação, com
 
 const ESTADO_INICIAL = {
 
-nome: ""
+nome: "",
 
-idade: 0
+idade: 0,
 
 }
 
@@ -213,7 +213,7 @@ A **Store** como já foi dito, é nossa fonte única da verdade, é aqui que tud
 
   
 
-Importaremos a **creteStore** do react e o **rootReducer** que criamos em reducer/index.js para cá e usando essa função para criar nossa banca
+Importaremos a **createStore** do react e o **rootReducer** que criamos em reducer/index.js para cá e usando essa função para criar nossa banca
 
   
 
@@ -225,7 +225,7 @@ import {composeWithDevTools } from 'redux-devtools-extension'
 
 import rootReducer from './reducer/index'
 
-const store = createStore(rootReduce, composeWithDevTools );
+const store = createStore(rootReducer, composeWithDevTools );
 
 export default store;
 
@@ -235,7 +235,7 @@ A store se liga a um redutor e no nosso caso, também ligamos ela ao **composeWi
 
   
 
-hora de criar nossas **actions** . Seguimos até **actions/index.js** aqui vamos criar e exportar as ações que alterarão os estados da aplicação por convenção criamos uma variável com o mesmo nome da action para evitar erros futuros e montamos a nossas funções de ação, uma função de ação recebe um **payload** (carga de dados) que sera passada mais a frente e retornara um objeto com essa carga e um **Type** (tipo) que nós guiara na hora de finalizar o **reducer**.
+Hora de criar nossas **actions** . Seguimos até **actions/index.js** aqui vamos criar e exportar as ações que alterarão os estados da aplicação por convenção criamos uma variável com o mesmo nome da action para evitar erros futuros e montamos a nossas funções de ação, uma função de ação recebe um **payload** (carga de dados) que sera passada mais a frente e retornara um objeto com essa carga e um **Type** (tipo) que nós guiara na hora de finalizar o **reducer**.
 
 ```jsx
 
@@ -283,7 +283,7 @@ return state;
 
   
 
-Dentro de actions definimos apenas uma ação, e demos-lhe o tipo SET_INFO, agora dentro de Reducer dizemos que caso o tipo da ação tratada for SET_INFO, nos retornaremos o nosso estado anterior (...state) e passar para a variável os valores recuperados do payload.
+Dentro de action definimos apenas uma ação, e demos-lhe o tipo SET_INFO, agora dentro de Reducer dizemos que caso o tipo da ação tratada for SET_INFO, nos retornaremos o nosso estado anterior (...state) e passar para a variável os valores recuperados do payload.
 
   
 
@@ -357,7 +357,7 @@ e pronto, agora podemos acessar normalmente o payload (que contem nome e idade) 
 
 ```jsx
 
-<h1> "Olá {this.pros.info.nome} me contaram que você tem {this.pros.info.idade} anos!" <h1>
+<h1> {`Olá {this.pros.info.nome} me contaram que você tem {this.pros.info.idade} anos!`} <h1>
 
 ```
 
